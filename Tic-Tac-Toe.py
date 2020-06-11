@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter.font import Font
 from tkinter import messagebox
 import os
 import sys
@@ -14,6 +13,13 @@ class TicTacToe(tk.Frame):
         self.grid()
         self.master.resizable(width=False, height=False)
         self.master.title("Tic-Tac-Toe")
+        self.flag = True
+        self.num_x = 0
+        self.num_o = 0
+        self.create_widgets()
+        self.mainloop()
+
+    def create_widgets(self):
         self.but1 = tk.Button(self, **button_param,
                               command=lambda: self.click(self.but1))
         self.but1.grid(row=0, column=0)
@@ -41,10 +47,6 @@ class TicTacToe(tk.Frame):
         self.but9 = tk.Button(self, **button_param,
                               command=lambda: self.click(self.but9))
         self.but9.grid(row=2, column=2)
-        self.flag = True
-        self.num_x = 0
-        self.num_o = 0
-        self.mainloop()
 
     def click(self, button):
         if self.flag == True:
@@ -102,8 +104,10 @@ class TicTacToe(tk.Frame):
                     self.master.destroy()
 
     def play_again(self):
-        app = sys.executable
-        os.execl(app, app, *sys.argv)
+        self.num_x = 0
+        self.num_o = 0
+        self.flag = True
+        self.create_widgets()
 
 
 def main():
