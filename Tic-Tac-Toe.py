@@ -8,8 +8,8 @@ button_param = {"height": 4, "width": 4,
 class TicTacToe(tk.Frame):
     def __init__(self, master=None):
         """
-        Construct a frame widget with the parent MASTER for the class TicTacToe. 
- 
+        Construct a frame widget with the parent MASTER for the class TicTacToe.
+        
         """
         tk.Frame.__init__(self, master)
         self.grid()
