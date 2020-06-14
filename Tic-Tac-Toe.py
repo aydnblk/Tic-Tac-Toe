@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+import tkinter.messagebox
 
 button_param = {"height": 4, "width": 4,
                 "font": "Times 15 bold", "activebackground": "gray74"}
